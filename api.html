@@ -1,0 +1,57 @@
+---
+layout: bootstrap
+permalink: api
+---
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">API</h1>
+
+      <h2 class="sub-header">AGV</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Endpoint</th>
+              <th>Input</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="success">
+              <td>GET</td>
+              <td>/agvs</td>
+              <td>-</td>
+              <td>List AGV</td>
+            </tr>
+            <tr class="success">
+              <td>GET</td>
+              <td>/agvs/:id/</td>
+              <td>Id</td>
+              <td>AGV</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/agvs</td>
+              <td>AGV</td>
+              <td>{success: [true|false]}</td>
+            </tr>
+            <tr class="info">
+              <td>PUT</td>
+              <td>/agvs/:id/</td>
+              <td>Id</td>
+              <td>{success: [true|false]}</td>
+            </tr>
+            <tr class="danger">
+              <td>DELETE</td>
+              <td>/agvs/:id/</td>
+              <td>Id</td>
+              <td>{success: [true|false]}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
