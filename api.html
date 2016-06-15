@@ -52,6 +52,52 @@ permalink: api
           </tbody>
         </table>
       </div>
+
+      <h2 class="sub-header">User</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Endpoint</th>
+              <th>Input</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="success">
+              <td>GET</td>
+              <td>/users</td>
+              <td>-</td>
+              <td>List User</td>
+            </tr>
+            <tr class="success">
+              <td>GET</td>
+              <td>/users/:id/</td>
+              <td>Id</td>
+              <td>User</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/users</td>
+              <td>User</td>
+              <td>{success: [true|false]}</td>
+            </tr>
+            <tr class="info">
+              <td>PUT</td>
+              <td>/users/:id/</td>
+              <td>Id</td>
+              <td>{success: [true|false]}</td>
+            </tr>
+            <tr class="danger">
+              <td>DELETE</td>
+              <td>/users/:id/</td>
+              <td>Id</td>
+              <td>{success: [true|false]}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
