@@ -16,6 +16,7 @@ permalink: map
 		zoom: 1,
 		center: [0,0],
 		crs:L.CRS.Simple, 
+    attributionControl: false,
 	})
   var w = 3300, h = 2243
 	var southWest = map.unproject([0, h], map.getMaxZoom() - 1)
