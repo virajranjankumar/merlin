@@ -1,0 +1,46 @@
+---
+layout: bootstrap
+permalink: map
+---
+<link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<link rel="stylesheet" type="text/css" href="http://leaflet.github.io/Leaflet.draw/leaflet.draw.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<script src="http://leaflet.github.io/Leaflet.draw/leaflet.draw.js"></script>
+
+<div id="map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+
+<script type="text/javascript">
+	var map = L.map('map', { 
+		minZoom: 1,
+		maxZoom: 4,
+		zoom: 1,
+		center: [0,0],
+		crs:L.CRS.Simple, 
+	})
+  var w = 3300, h = 2243
+	var southWest = map.unproject([0, h], map.getMaxZoom() - 1)
+  var northEast = map.unproject([w, 0], map.getMaxZoom() - 1)
+  var bounds = new L.LatLngBounds(southWest, northEast)
+
+	var image = L.imageOverlay('{{ site.baseurl }}/assets/floor_map.jpg', bounds).addTo(map);
+	map.setMaxBounds(bounds)
+
+  var drawnItems = new L.FeatureGroup();
+  map.addLayer(drawnItems);
+
+  var drawControl = new L.Control.Draw({
+      edit: {
+          featureGroup: drawnItems,
+      },
+      draw: {
+        circle:false,
+      }
+  });
+  map.addControl(drawControl); 
+
+  map.on('draw:created', function (e) {
+      var type = e.layerType,
+          layer = e.layer;
+      drawnItems.addLayer(layer);
+  });  
+</script>
