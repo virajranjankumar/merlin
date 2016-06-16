@@ -1,0 +1,141 @@
+---
+layout: bootstrap
+permalink: dashboard
+---
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 main">
+      <div class="row placeholders">
+        <div class="col-xs-12 col-sm-12 placeholder">
+        <div id="map" style="width: 100%; height: 250px;"></div>
+        </div>
+      </div>
+      <h2 class="sub-header">AGV's on Level 1</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Battery Level</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem</td>
+              <td>Navigating</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 60%">
+                    60%
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group">
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-off"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-wrench"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-calendar"></span></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Amet</td>
+              <td>Docked</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width: 90%">
+                    90%
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group">
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-off"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-wrench"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-calendar"></span></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Integer</td>
+              <td>Idle</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 30%">
+                    30%
+                  </div>
+                </div>                
+              </td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group">
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-off"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-wrench"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-calendar"></span></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Libero</td>
+              <td>Offline</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5%">
+                    <span class=".sr-only"></span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group">
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-off"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-wrench"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-calendar"></span></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Dapibus</td>
+              <td>Maintenance</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 96%">
+                    96%
+                  </div>
+                </div>                
+              </td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group">
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-off"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-wrench"></span></button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-calendar"></span></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+<script type="text/javascript">
+  var map = L.map('map', { 
+    minZoom: 1,
+    maxZoom: 4,
+    zoom: 2,
+    center: [0,0],
+    crs:L.CRS.Simple, 
+    attributionControl: false,
+  })
+  var w = 3300, h = 2243
+  var southWest = map.unproject([0, h], map.getMaxZoom() - 1)
+  var northEast = map.unproject([w, 0], map.getMaxZoom() - 1)
+  var bounds = new L.LatLngBounds(southWest, northEast)
+
+  var image = L.imageOverlay('{{ site.baseurl }}/assets/floor_map.jpg', bounds).addTo(map);
+  map.setMaxBounds(bounds)
+</script>

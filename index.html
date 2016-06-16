@@ -1,6 +1,7 @@
 ---
 layout: bootstrap
 ---
+<div class="container-fluid">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="masthead">
@@ -11,7 +12,10 @@ layout: bootstrap
 <div class="jumbotron">
   <h1>Simplified Enterprise Management for Automated Guided Vehicles</h1>
   <p class="lead">The new breed of laser and stereo camera guided automated guided vehicles (AGV) need a software system to make deployment, monitoring and planning simpler. {{site.company}} is the solution.</p>
-  <p><a class="btn btn-lg btn-success" href="http://goo.gl/forms/zqfFh4pEC6eyWTum2" role="button">Register for updates</a></p>
+  <p>
+    <a class="btn btn-lg btn-primary" href="http://goo.gl/forms/zqfFh4pEC6eyWTum2" role="button">Register for updates</a>
+    <a class="btn btn-lg btn-success" href="{{ site.baseurl }}/dashboard" role="button">View Demo Dashboard</a>
+  </p>
 </div>
 
 <div class="container marketing">
@@ -176,3 +180,4 @@ Meet with AGV suppliers and users. Incorporate the feedback from these customers
 <footer class="footer">
   <p>&copy; 2016 {{ site.company }}, Inc.</p>
 </footer>
+</div>
