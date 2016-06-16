@@ -24,7 +24,7 @@ permalink: dashboard
           <tbody>
             <tr>
               <td>Lorem</td>
-              <td>Navigating</td>
+              <td>Navigating <span class="badge">4</span></td>
               <td>
                 <div class="progress">
                   <div class="progress-bar progress-bar-info" role="progressbar" style="width: 60%">
@@ -62,7 +62,7 @@ permalink: dashboard
             </tr>
             <tr>
               <td>Integer</td>
-              <td>Navigating</td>
+              <td>Navigating <span class="badge">1</span></td>
               <td>
                 <div class="progress">
                   <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 30%">
@@ -150,7 +150,11 @@ permalink: dashboard
     m.addStation(1, 2000)
     m.addStation(4, 1000)
     m.addTo(map);
-    m.bindPopup('Lorem - <i>Navigating</i>')  
+    m.bindPopup('Lorem - <i>Navigating</i>')
+    m.on('loop', function(e) {
+      var val = parseInt($('.badge:first').text())
+      $('.badge:first').text(val + 1)
+    })
   }
 
   function IntegerPath() {
@@ -161,6 +165,10 @@ permalink: dashboard
     m.addStation(2, 2000)
     m.addTo(map);
     m.bindPopup('Integer - <i>Navigating</i>')  
+    m.on('loop', function(e) {
+      var val = parseInt($('.badge:last').text())
+      $('.badge:last').text(val + 1)
+    })
   }
 
   LoremPath()
