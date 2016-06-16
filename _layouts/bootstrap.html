@@ -24,6 +24,14 @@
   </head>
 
   <body>
-    {{ content }}
+    <div class="container-fluid">
+      <div class="masthead">
+        <h3 class="text-muted">{{ site.company }}</h3>
+      </div>
+      {{ content }}
+      <footer class="footer">
+        <p>&copy; 2016 {{ site.company }}, Inc.</p>
+      </footer>      
+    </div>
   </body>
 </html>

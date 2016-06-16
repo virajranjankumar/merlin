@@ -2,7 +2,6 @@
 layout: bootstrap
 permalink: dashboard
 ---
-<div class="container-fluid">
   <div class="row">
     <div class="col-sm-12 col-md-12 main">
       <div class="row placeholders">
@@ -60,7 +59,7 @@ permalink: dashboard
             </tr>
             <tr>
               <td>Integer</td>
-              <td>Idle</td>
+              <td>Navigating</td>
               <td>
                 <div class="progress">
                   <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 30%">
@@ -117,11 +116,10 @@ permalink: dashboard
       </div>
     </div>
   </div>
-</div>
 
 <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-
+<script src="http://ewoken.github.io/Leaflet.MovingMarker/MovingMarker.js"></script>
 <script type="text/javascript">
   var map = L.map('map', { 
     minZoom: 1,
@@ -136,6 +134,38 @@ permalink: dashboard
   var northEast = map.unproject([w, 0], map.getMaxZoom() - 1)
   var bounds = new L.LatLngBounds(southWest, northEast)
 
-  var image = L.imageOverlay('{{ site.baseurl }}/assets/floor_map.jpg', bounds).addTo(map);
+  var image = L.imageOverlay('/merlin/assets/floor_map.jpg', bounds).addTo(map);
   map.setMaxBounds(bounds)
+
+  function LoremPath() {
+    var path = [[-25, 25], [-50, 25], [-50, 55], [-25, 55], [-25, 25]]
+    L.polyline(path).addTo(map);
+    var m = L.Marker.movingMarker(path, [2000, 2000, 1000, 1000], {autostart: true, loop: true})
+    m.addStation(1, 2000)
+    m.addStation(4, 1000)
+    m.addTo(map);
+    m.bindPopup('Lorem - <i>Navigating</i>')  
+  }
+
+  function IntegerPath() {
+    var path = [[-44, 192.91], [-44, 152], [-60, 152], [-44, 152], [-44, 192.91]]
+    L.polyline(path).addTo(map);
+    var m = L.Marker.movingMarker(path, [3000, 3000, 1000, 1000], {autostart: true, loop: true})
+    m.addStation(1, 2000)
+    m.addStation(2, 2000)
+    m.addTo(map);
+    m.bindPopup('Integer - <i>Navigating</i>')  
+  }
+
+  LoremPath()
+  IntegerPath()
+
+  var marker1 = L.marker([-60, 25]).addTo(map);
+  marker1.bindPopup('Amet - <b>Docked</b>')
+
+  var marker2 = L.marker([-23.92, 152.91]).addTo(map);
+  marker2.bindPopup('Dapibus - <i>Maintenance</i>')
+
+  var marker4 = L.marker([-31.85, 94.1]).addTo(map);
+  marker4.bindPopup('Libero - <b>Offline</b>')
 </script>
