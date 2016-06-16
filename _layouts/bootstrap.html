@@ -24,6 +24,9 @@
   </head>
 
   <body>
+    {% if jekyll.environment == 'production' %}
+    {% include tagmanager.html %}
+    {% endif %}
     <div class="container-fluid">
       <div class="masthead">
         <h3 class="text-muted">{{ site.company }}</h3>
