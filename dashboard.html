@@ -143,6 +143,8 @@ permalink: dashboard
   var image = L.imageOverlay('/merlin/assets/floor_map.jpg', bounds).addTo(map);
   map.setMaxBounds(bounds)
 
+  var dockIcon = L.divIcon({className: 'glyphicon glyphicon-flash'});
+
   function LoremPath() {
     var path = [[-25, 25], [-50, 25], [-50, 55], [-25, 55], [-25, 25]]
     L.polyline(path).addTo(map);
@@ -177,14 +179,21 @@ permalink: dashboard
   var marker1 = L.marker([-60, 25]).addTo(map);
   marker1.bindPopup('Amet - <b>Docked</b>')
 
+  var dockMarker = L.marker([-59, 25], {icon:dockIcon}).addTo(map);
+  dockMarker.bindPopup('Dock')
+
   var marker2 = L.marker([-23.92, 152.91]).addTo(map);
   marker2.bindPopup('Dapibus - <i>Maintenance</i>')
 
   var marker4 = L.marker([-31.85, 94.1]).addTo(map);
   marker4.bindPopup('Libero - <b>Offline</b>')
+
 </script>
 
 <script src="http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js"></script>
 <script>
   $('.spark').sparkline();
 </script>
+<style>
+  .glyphicon-flash { font-size: 2em; }
+</style>
