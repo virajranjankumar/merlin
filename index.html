@@ -13,128 +13,167 @@ layout: bootstrap
 </div>
 
 <div class="container marketing">
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-    <img class="align-center" width="330" height="214" src="{{ site.baseurl }}/assets/editor.gif">
-      <div class="caption">
-        <h3>1. Design</h3>
-        <p>Whether you've got a single floor plan or multi-leveled complex, you start off with designing paths along which the AGVs will be traveling.</p>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-xs-center">Why Merlin?</h2>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <h3>1. Superior UX</h3>
+      <p>
+        <ul>
+          <li>Easy User Interaction</li>
+          <li>Simple Fleet Management</li>
+        </ul>
+      </p>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <h3>2. Knowledgeable Administration</h3>
+      <p>
+        <ul>
+          <li>Intuitive Graphs and Reports</li>
+          <li>Cohesive Scheduling</li>
+        </ul>
+      </p>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <h3>3. Seamless Servicing</h3>
+      <p>
+        <ul>
+          <li>Detect Early Warning Signs</li>
+          <li>Optimize Your Return On Investment</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-xs-center">How Merlin Works</h2>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img class="align-center" width="330" height="214" src="{{ site.baseurl }}/assets/editor.gif">
+        <div class="caption">
+          <h3>1. Design</h3>
+          <p>Whether you've got a single floor plan or multi-leveled complex, you start off with designing paths along which the AGVs will be traveling.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img class="align-center" width="330" height="214" src="{{ site.baseurl }}/assets/wifi.gif">
+        <div class="caption">
+          <h3>2. Connect</h3>
+          <p>Configure the AGV to connect to the system. When our system makes contact with the AGV, it will be guided with the fleet management and control system.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img class="align-center" width="330" height="214" src="{{ site.baseurl }}/assets/dashboard.gif">
+        <div class="caption">
+          <h3>3. Monitor</h3>
+          <p>During regular operations, monitor the health and status of the fleet and individual AGV's. Use this information to troubleshoot and solve issues before they become costly.</p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-    <img class="align-center" width="330" height="214" src="{{ site.baseurl }}/assets/wifi.gif">
-      <div class="caption">
-        <h3>2. Connect</h3>
-        <p>Configure the AGV to connect to the system. When our system makes contact with the AGV, it will be guided with the fleet management and control system.</p>
+
+  <hr class="featurette-divider">
+
+  <div class="row">
+    <div class="col-lg-4">
+      <img class="img-circle" src="{{ site.baseurl }}/assets/route.png" alt="Fleet Management" width="140" height="140">
+      <h2>Fleet Management</h2>
+      <p>Field deployments and management of multiple AGV's is challenging and takes a substantive amount of time. This leads to lost time due to halting production lines and factory floors.<p>
+        <p>Our solution is a methodical system which guides enterprises from the moment they switch on their AGV<p>
+          <p>We want to make the make the task of managing multiple AGV's as simple as managing one.</p>
+          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="{{ site.baseurl }}/assets/editor.png" alt="Open and Extensible" width="140" height="140">
+          <h2>Open and Extensible</h2>
+          <p>The system is built from the ground up with open API's to allow any AGV system to connect and be actuated from a central system.</p>
+          <p>This design prevents vendor lock-in and allows future AGV vendors to easily interface with an organizations existing AGV management system.</p>
+          <p><a class="btn btn-default" href="{{ site.baseurl }}/api" role="button">View architecture &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="{{ site.baseurl }}/assets/calendar.png" alt="Effortless Monitoring" width="140" height="140">
+          <h2>Effortless Monitoring</h2>
+          <p>Laser guided AGV's deployed on warehouse and productions sites need continuous monitoring so that any potential issues are caught early.</p>
+          <p>Most newer AGV systems do not come with the tools and infrastructure for long-term, multi-user/multi-AGV deployment scenarios. Our solution intends to fill that gap and provide the enterprise with the tools they need to monitor their automation investments.</p>
+          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Information rich maps. <span class="text-muted"> Easy to customize.</span></h2>
+          <p class="lead">Add annotations and enhance the map with your custom labels. Give further context to help other users and the AGVs to better understand and utilize the map. Build routes that are accessible for the AGV's and enhance the map with points for docking and charging.</p>
+          <a class="btn btn-primary" href="{{ site.baseurl }}/map" role="button">Try the Editor</a>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/editor.png" width="500px" height="500px" alt="Editor Interface">
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-    <img class="align-center" width="330" height="214" src="{{ site.baseurl }}/assets/dashboard.gif">
-      <div class="caption">
-        <h3>3. Monitor</h3>
-        <p>During regular operations, monitor the health and status of the fleet and individual AGV's. Use this information to troubleshoot and solve issues before they become costly.</p>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Bring Your Own Tools (BYOT). <span class="text-muted"> Seamless integration.</span></h2>
+          <p class="lead">Schedule repetitive tasks and routes for the AGV fleet using your favorite calendaring system. Integrate seamlessly with you existing work-flow and use the tools that you love.</p>
+          <a class="btn btn-primary" href="{{ site.baseurl }}/calendar" role="button">Try the Scheduler</a>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/calendar.png" width="500px" height="500px" alt="Calendar Interface">
+        </div>
       </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Intuitive User Interface. <span class="text-muted"><i>Uber</i> for automation.</span></h2>
+          <p class="lead">Control multiple AGVs using an intuitive interface. We took design cues from the most intuitive mapping software Google Maps, so if you've used Google maps before, you will feel right at home with Merlin. Work with familiar user interfaces and user interactions. We take advantage of learned user behavior and remove the complexity of automation software.</p>
+          <a class="btn btn-primary" href="{{ site.baseurl }}/detail" role="button">View AGV Detail page</a>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/empty.png" width="500px" height="500px" alt="Indoor Map and Floorplan">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Auto generate the best paths from <b>A</b> to <b>B</b>. <span class="text-muted">Remove Complexity.</span></h2>
+          <p class="lead">Schedule paths and routes anywhere within a factory or production floor. The software system keeps track of which AGV's should be allocated to the task and handles issues such as fleet management and optimized delivery.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/route.png" width="500px" height="500px" alt="AGV Routing">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Multiple floors and large spaces. <span class="text-muted">We handle it.</span></h2>
+          <p class="lead">It doesn’t matter how many areas you need to monitor and how many AGV's you need to keep track, our software will allow you to quickly control, monitor and manage your fleet.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/large_route.png" width="500px" height="500px" alt="Large Indoor Map">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
     </div>
-  </div>
-</div>
-<hr class="featurette-divider">
-
-<div class="row">
-  <div class="col-lg-4">
-    <img class="img-circle" src="{{ site.baseurl }}/assets/route.png" alt="Fleet Management" width="140" height="140">
-    <h2>Fleet Management</h2>
-    <p>Field deployments and management of multiple AGV's is challenging and takes a substantive amount of time. This leads to lost time due to halting production lines and factory floors.<p>
-    <p>Our solution is a methodical system which guides enterprises from the moment they switch on their AGV<p>
-    <p>We want to make the make the task of managing multiple AGV's as simple as managing one.</p>
-    <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-  </div><!-- /.col-lg-4 -->
-  <div class="col-lg-4">
-    <img class="img-circle" src="{{ site.baseurl }}/assets/editor.png" alt="Open and Extensible" width="140" height="140">
-    <h2>Open and Extensible</h2>
-    <p>The system is built from the ground up with open API's to allow any AGV system to connect and be actuated from a central system.</p>
-    <p>This design prevents vendor lock-in and allows future AGV vendors to easily interface with an organizations existing AGV management system.</p>
-    <p><a class="btn btn-default" href="{{ site.baseurl }}/api" role="button">View architecture &raquo;</a></p>
-  </div><!-- /.col-lg-4 -->
-  <div class="col-lg-4">
-    <img class="img-circle" src="{{ site.baseurl }}/assets/calendar.png" alt="Effortless Monitoring" width="140" height="140">
-    <h2>Effortless Monitoring</h2>
-    <p>Laser guided AGV's deployed on warehouse and productions sites need continuous monitoring so that any potential issues are caught early.</p>
-    <p>Most newer AGV systems do not come with the tools and infrastructure for long-term, multi-user/multi-AGV deployment scenarios. Our solution intends to fill that gap and provide the enterprise with the tools they need to monitor their automation investments.</p>
-    <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-  </div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
-
-<hr class="featurette-divider">
-
-<div class="row featurette">
-  <div class="col-md-7">
-    <h2 class="featurette-heading">Information rich maps. <span class="text-muted"> Easy to customize.</span></h2>
-    <p class="lead">Add annotations and enhance the map with your custom labels. Give further context to help other users and the AGVs to better understand and utilize the map. Build routes that are accessible for the AGV's and enhance the map with points for docking and charging.</p>
-    <a class="btn btn-primary" href="{{ site.baseurl }}/map" role="button">Try the Editor</a>
-  </div>
-  <div class="col-md-5">
-    <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/editor.png" width="500px" height="500px" alt="Editor Interface">
-  </div>
-</div>
-
-<hr class="featurette-divider">
-
-<div class="row featurette">
-  <div class="col-md-7 col-md-push-5">
-    <h2 class="featurette-heading">Bring Your Own Tools (BYOT). <span class="text-muted"> Seamless integration.</span></h2>
-    <p class="lead">Schedule repetitive tasks and routes for the AGV fleet using your favorite calendaring system. Integrate seamlessly with you existing work-flow and use the tools that you love.</p>
-    <a class="btn btn-primary" href="{{ site.baseurl }}/calendar" role="button">Try the Scheduler</a>
-  </div>
-  <div class="col-md-5 col-md-pull-7">
-    <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/calendar.png" width="500px" height="500px" alt="Calendar Interface">
-  </div>
-</div>
-
-<hr class="featurette-divider">
-
-<div class="row featurette">
-  <div class="col-md-7">
-    <h2 class="featurette-heading">Intuitive User Interface. <span class="text-muted"><i>Uber</i> for automation.</span></h2>
-    <p class="lead">Control multiple AGVs using an intuitive interface. We took design cues from the most intuitive mapping software Google Maps, so if you've used Google maps before, you will feel right at home with Merlin. Work with familiar user interfaces and user interactions. We take advantage of learned user behavior and remove the complexity of automation software.</p>
-    <a class="btn btn-primary" href="{{ site.baseurl }}/detail" role="button">View AGV Detail page</a>
-  </div>
-  <div class="col-md-5">
-    <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/empty.png" width="500px" height="500px" alt="Indoor Map and Floorplan">
-  </div>
-</div>
-
-<hr class="featurette-divider">
-
-<div class="row featurette">
-  <div class="col-md-7 col-md-push-5">
-    <h2 class="featurette-heading">Auto generate the best paths from <b>A</b> to <b>B</b>. <span class="text-muted">Remove Complexity.</span></h2>
-    <p class="lead">Schedule paths and routes anywhere within a factory or production floor. The software system keeps track of which AGV's should be allocated to the task and handles issues such as fleet management and optimized delivery.</p>
-  </div>
-  <div class="col-md-5 col-md-pull-7">
-    <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/route.png" width="500px" height="500px" alt="AGV Routing">
-  </div>
-</div>
-
-<hr class="featurette-divider">
-
-<div class="row featurette">
-  <div class="col-md-7">
-    <h2 class="featurette-heading">Multiple floors and large spaces. <span class="text-muted">We handle it.</span></h2>
-    <p class="lead">It doesn’t matter how many areas you need to monitor and how many AGV's you need to keep track, our software will allow you to quickly control, monitor and manage your fleet.</p>
-  </div>
-  <div class="col-md-5">
-    <img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/large_route.png" width="500px" height="500px" alt="Large Indoor Map">
-  </div>
-</div>
-
-<hr class="featurette-divider">
-
-</div>
 <!--
   Part 2. company / organization information
 Official Name of the Organization 
