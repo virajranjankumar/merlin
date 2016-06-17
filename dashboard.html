@@ -144,6 +144,8 @@ permalink: dashboard
   map.setMaxBounds(bounds)
 
   var dockIcon = L.divIcon({className: 'glyphicon glyphicon-flash'});
+  var maintenanceIcon = L.divIcon({className: 'glyphicon glyphicon-wrench'});
+  var offlineIcon = L.divIcon({className: 'glyphicon glyphicon-warning-sign'});
 
   function LoremPath() {
     var path = [[-25, 25], [-50, 25], [-50, 55], [-25, 55], [-25, 25]]
@@ -185,9 +187,13 @@ permalink: dashboard
   var marker2 = L.marker([-23.92, 152.91]).addTo(map);
   marker2.bindPopup('Dapibus - <i>Maintenance</i>')
 
+  var maintenanceMarker = L.marker([-23, 152.91], {icon:maintenanceIcon}).addTo(map);
+  
   var marker4 = L.marker([-31.85, 94.1]).addTo(map);
   marker4.bindPopup('Libero - <b>Offline</b>')
 
+  var offlineMarker = L.marker([-30, 93.5], {icon:offlineIcon}).addTo(map);
+  
 </script>
 
 <script src="http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js"></script>
@@ -195,5 +201,5 @@ permalink: dashboard
   $('.spark').sparkline();
 </script>
 <style>
-  .glyphicon-flash { font-size: 2em; }
+  .glyphicon-flash, .glyphicon-wrench, .glyphicon-warning-sign { font-size: 2em; }
 </style>
