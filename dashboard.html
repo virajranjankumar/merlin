@@ -140,60 +140,83 @@ permalink: dashboard
   var northEast = map.unproject([w, 0], map.getMaxZoom() - 1)
   var bounds = new L.LatLngBounds(southWest, northEast)
 
-  var image = L.imageOverlay('/merlin/assets/floor_map.jpg', bounds).addTo(map);
+  var floor1 = L.imageOverlay('/merlin/assets/floor_map.jpg', bounds)
+  var floor2 = L.imageOverlay('/merlin/assets/first_floor_map.jpg', bounds)
   map.setMaxBounds(bounds)
 
   var dockIcon = L.divIcon({className: 'glyphicon glyphicon-flash'});
   var maintenanceIcon = L.divIcon({className: 'glyphicon glyphicon-wrench'});
   var offlineIcon = L.divIcon({className: 'glyphicon glyphicon-warning-sign'});
+  var floor1MarkerGroup = L.layerGroup();
 
   function LoremPath() {
     var path = [[-25, 25], [-50, 25], [-50, 55], [-25, 55], [-25, 25]]
-    L.polyline(path).addTo(map);
+    var polyline = L.polyline(path)
+    floor1MarkerGroup.addLayer(polyline)
     var m = L.Marker.movingMarker(path, [2000, 2000, 1000, 1000], {autostart: true, loop: true})
     m.addStation(1, 2000)
     m.addStation(4, 1000)
-    m.addTo(map);
     m.bindPopup('Lorem - <i>Navigating</i>')
     m.on('loop', function(e) {
       var val = parseInt($('.badge:first').text())
       $('.badge:first').text(val + 1)
     })
+    floor1MarkerGroup.addLayer(m)
   }
 
   function IntegerPath() {
     var path = [[-44, 192.91], [-44, 152], [-60, 152], [-44, 152], [-44, 192.91]]
-    L.polyline(path).addTo(map);
+    var polyline = L.polyline(path)
+    floor1MarkerGroup.addLayer(polyline)
     var m = L.Marker.movingMarker(path, [3000, 3000, 1000, 1000], {autostart: true, loop: true})
     m.addStation(1, 2000)
     m.addStation(2, 2000)
-    m.addTo(map);
     m.bindPopup('Integer - <i>Navigating</i>')  
     m.on('loop', function(e) {
       var val = parseInt($('.badge:last').text())
       $('.badge:last').text(val + 1)
     })
+    floor1MarkerGroup.addLayer(m)
   }
 
   LoremPath()
   IntegerPath()
 
-  var marker1 = L.marker([-60, 25]).addTo(map);
+  var marker1 = L.marker([-60, 25])
   marker1.bindPopup('Amet - <b>Docked</b>')
+  floor1MarkerGroup.addLayer(marker1)
 
-  var dockMarker = L.marker([-59, 25], {icon:dockIcon}).addTo(map);
+  var dockMarker = L.marker([-59, 25], {icon:dockIcon})
   dockMarker.bindPopup('Dock')
+  floor1MarkerGroup.addLayer(dockMarker)
 
-  var marker2 = L.marker([-23.92, 152.91]).addTo(map);
+  var marker2 = L.marker([-23.92, 152.91])
   marker2.bindPopup('Dapibus - <i>Maintenance</i>')
+  floor1MarkerGroup.addLayer(marker2)
 
-  var maintenanceMarker = L.marker([-23, 152.91], {icon:maintenanceIcon}).addTo(map);
+  var maintenanceMarker = L.marker([-23, 152.91], {icon:maintenanceIcon})
+  floor1MarkerGroup.addLayer(maintenanceMarker)
   
-  var marker4 = L.marker([-31.85, 94.1]).addTo(map);
+  var marker4 = L.marker([-31.85, 94.1])
   marker4.bindPopup('Libero - <b>Offline</b>')
+  floor1MarkerGroup.addLayer(marker4)
 
-  var offlineMarker = L.marker([-30, 93.5], {icon:offlineIcon}).addTo(map);
+  var offlineMarker = L.marker([-30, 93.5], {icon:offlineIcon})
+  floor1MarkerGroup.addLayer(offlineMarker)
   
+  var floors = {"Floor 1":floor1, "Floor 2":floor2}
+
+  floor1.addTo(map)
+  floor1MarkerGroup.addTo(map)
+
+  L.control.layers(floors).addTo(map);
+  map.on('baselayerchange', ({layer, name}) => {
+    if(name == 'Floor 1') {
+      floor1MarkerGroup.addTo(map)
+    } else {
+      map.removeLayer(floor1MarkerGroup)
+    }
+  })
 </script>
 
 <script src="http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js"></script>
